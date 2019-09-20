@@ -1,5 +1,5 @@
 "use strict";
-var Alexa = require('alexa-sdk');
+const Alexa = require('ask-sdk-v1adapter');
 var questions = require("./questions");
 
 var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
@@ -54,7 +54,7 @@ var languageString = {
 
 
 exports.handler = function(event, context, callback) {
-    var alexa = Alexa.handler(event, context);
+    var alexa = Alexa.handler(event, context, callback);
     alexa.appId = APP_ID;
     // To enable string internationalization (i18n) features, set a resources object.
     alexa.resources = languageString;
